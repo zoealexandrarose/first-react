@@ -10,6 +10,14 @@ import six from "./assets/image6.jpeg";
 
 const images = [one, two, three, four, five, six];
 
+const Loading = () => (
+  <aside>
+    <div className="loading-bar">
+      <label htmlFor="images-loaded">Loading images...</label>
+      <progress id="images-loaded" max="100" value="50"></progress>
+    </div>
+  </aside>
+);
 // app component
 // reusable piece of code that returns a react element
 // only looking at functional components in this project
@@ -23,19 +31,22 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <div className="title">
+    <section>
+      <header>
         <h1>Zesty</h1>
         <h2>
           A photography project <br /> by Ella Fielding
         </h2>
-      </div>
+      </header>
 
-      <div className="image-container">
-        <h3>{currentImage + 1} / {images.length} </h3>
+      <figure>
+        <Loading />
+        <figcaption>
+          {currentImage + 1} / {images.length}{" "}
+        </figcaption>
         <img alt="" src={images[currentImage]} onClick={handleClick} />
-      </div>
-    </div>
+      </figure>
+    </section>
   );
 };
 
