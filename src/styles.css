@@ -12,17 +12,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.App {
+section {
   display: flex;
   height: 100vh;
   justify-content: space-between;
-}
-
-.image-container {
-  background: white;
-  margin: 0;
-  position: relative;
-  width: 50vw;
 }
 
 h1 {
@@ -40,7 +33,14 @@ h2 {
   font-weight: normal;
 }
 
-h3 {
+figure {
+  background: white;
+  margin: 0;
+  position: relative;
+  width: 50vw;
+}
+
+figcaption {
   font-size: 36px;
   font-weight: normal;
   position: fixed;
@@ -50,6 +50,7 @@ h3 {
   color: white;
   margin: 0 auto; /* remember - only works if element has a specified width */
   width: 50%;
+  padding: 20px 0;
 }
 
 img {
@@ -57,4 +58,31 @@ img {
   object-fit: cover;
   position: fixed;
   width: 50%;
+}
+
+aside {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #E8E8E8;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-bar {
+  display: grid;
+  row-gap: 12px;
+}
+progress {
+  border: 1px solid #294910;
+  height: 20px;
+  width: 400px;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: #E8E8E8;
+}
+progress[value]::-webkit-progress-value {
+  background-color: #294910;
 }
