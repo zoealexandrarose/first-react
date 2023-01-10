@@ -39,3 +39,22 @@ h2 {
   margin: 0 20px 20px;
   font-weight: normal;
 }
+
+h3 {
+  font-size: 36px;
+  font-weight: normal;
+  position: fixed;
+  text-align: center;
+  z-index: 1;
+  bottom: 0;
+  color: white;
+  margin: 0 auto; /* remember - only works if element has a specified width */
+  width: 50%;
+}
+
+img {
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  width: 50%;
+}
