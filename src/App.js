@@ -10,11 +10,15 @@ import six from "./assets/image6.jpeg";
 
 const images = [one, two, three, four, five, six];
 
-const Loading = () => (
+const Loading = ({ calculatedAmount }) => (
   <aside>
     <div className="loading-bar">
       <label htmlFor="images-loaded">Loading images...</label>
-      <progress id="images-loaded" max="100" value="50"></progress>
+      <progress
+        id="images-loaded"
+        max="100"
+        value={calculatedAmount}
+      ></progress>
     </div>
   </aside>
 );
@@ -23,11 +27,17 @@ const Loading = () => (
 // only looking at functional components in this project
 const App = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [numberLoaded, setnumberLoaded] = useState(0);
+
   const handleClick = () => {
     const length = images.length - 1;
     setCurrentImage((currentImage) => {
       return currentImage < length ? currentImage + 1 : 0;
     });
+  };
+
+  const handleImageLoad = () => {
+    setnumberLoaded((numberLoaded) => numberLoaded + 1);
   };
 
   return (
@@ -40,11 +50,23 @@ const App = () => {
       </header>
 
       <figure>
-        <Loading />
+        {numberLoaded < images.length && (
+          <Loading calculatedAmount={(numberLoaded / images.length) * 100} />
+        )}
         <figcaption>
           {currentImage + 1} / {images.length}{" "}
         </figcaption>
-        <img alt="" src={images[currentImage]} onClick={handleClick} />
+        {images.map((imageURL, index) => (
+          <img
+            alt=""
+            key={imageURL}
+            src={imageURL}
+            onClick={handleClick}
+            onLoad={handleImageLoad}
+            className={currentImage === index ? "display" : "hide"}
+          />
+        ))}
+        ;
       </figure>
     </section>
   );
