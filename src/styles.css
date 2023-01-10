@@ -58,6 +58,14 @@ img {
   object-fit: cover;
   position: fixed;
   width: 50%;
+  opacity: 0;
+}
+
+.display {
+  opacity: 1;
+}
+.hide {
+  opacity: 0;
 }
 
 aside {
