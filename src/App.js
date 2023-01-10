@@ -18,11 +18,7 @@ const App = () => {
   const handleClick = () => {
     const length = images.length - 1;
     setCurrentImage((currentImage) => {
-      if (currentImage < length) {
-        currentImage + 1;
-      } else {
-        return 0;
-      }
+      return currentImage < length ? currentImage + 1 : 0;
     });
   };
 
@@ -36,6 +32,7 @@ const App = () => {
       </div>
 
       <div className="image-container">
+        <h3>{currentImage + 1} / {images.length} </h3>
         <img alt="" src={images[currentImage]} onClick={handleClick} />
       </div>
     </div>
