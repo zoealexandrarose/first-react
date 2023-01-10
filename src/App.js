@@ -43,9 +43,9 @@ const App = () => {
   return (
     <section>
       <header>
-        <h1>Zesty</h1>
+        <h1>Fresh</h1>
         <h2>
-          A photography project <br /> by Ella Fielding
+          A photography project <br /> by Pangaia
         </h2>
       </header>
 

@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap");
 
 body {
-  background: #fbdd74;
-  color: #294910;
+  background: #bcf7f7;
+  color: #ffc300;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -22,6 +22,10 @@ h1 {
   font-size: 10vw; /* title will always be 10% of browsers width*/
   margin: 0 20px;
   line-height: 1.4;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
@@ -72,7 +76,7 @@ aside {
   height: 100%;
   width: 100%;
   position: absolute;
-  background: #E8E8E8;
+  background: #e8e8e8;
   display: flex;
   z-index: 2;
   align-items: center;
@@ -84,13 +88,42 @@ aside {
   row-gap: 12px;
 }
 progress {
-  border: 1px solid #294910;
+  border: 1px solid #ffc300;
   height: 20px;
   width: 400px;
 }
 progress[value]::-webkit-progress-bar {
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
 }
 progress[value]::-webkit-progress-value {
-  background-color: #294910;
+  background-color: #ffc300;
+}
+
+@media (max-width: 800px) {
+  section {
+    flex-direction: column;
+  }
+
+  figure {
+    flex-grow: 1;
+    width: 100vw;
+  }
+
+  figcaption {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  img {
+    width: 100%;
+  }
 }
