@@ -7,8 +7,8 @@ import React from "react"; // !!
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>Zesty</h1>
+      <h2>A photography project by Ella Fielding</h2>
     </div>
   );
 };
